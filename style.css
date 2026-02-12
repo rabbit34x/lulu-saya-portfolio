@@ -218,7 +218,7 @@ body {
 }
 
 .orleans-section::before {
-  content: '⚜ ⚜ ⚜';
+  content: '✦  ✦  ✦';
   position: absolute;
   top: 20px;
   left: 50%;
@@ -230,7 +230,7 @@ body {
 }
 
 .orleans-section::after {
-  content: '⚜ ⚜ ⚜';
+  content: '✦  ✦  ✦';
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -309,8 +309,12 @@ body {
 }
 
 .value-icon {
-  font-size: 2rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold);
   margin-bottom: 0.8rem;
+  letter-spacing: 0.05em;
 }
 
 .orleans-value h4 {

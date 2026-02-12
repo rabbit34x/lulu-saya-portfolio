@@ -30,13 +30,14 @@ body {
   background: var(--ivory);
   color: var(--text-dark);
   line-height: 1.9;
+  font-size: 17px;
 }
 
 /* Ornament */
 .ornament {
   text-align: center;
   color: var(--gold);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   letter-spacing: 0.5em;
   opacity: 0.5;
   margin: 1rem 0;
@@ -78,7 +79,7 @@ body {
 
 .hero h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 3.8rem;
+  font-size: 4.2rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   margin-bottom: 0.6rem;
@@ -87,7 +88,7 @@ body {
 
 .tagline {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   color: var(--text-muted);
   letter-spacing: 0.3em;
   text-transform: uppercase;
@@ -95,7 +96,7 @@ body {
 }
 
 .subtitle {
-  font-size: 0.92rem;
+  font-size: 1rem;
   color: var(--text-muted);
   max-width: 480px;
   margin: 0 auto;
@@ -112,7 +113,7 @@ body {
 .hero-ornament {
   margin-top: 2rem;
   color: var(--gold);
-  font-size: 0.9rem;
+  font-size: 1rem;
   opacity: 0.4;
   letter-spacing: 0.8em;
 }
@@ -146,7 +147,7 @@ body {
 
 .section h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
   text-align: center;
@@ -207,7 +208,7 @@ body {
 
 .profile-card h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 0.2rem;
   letter-spacing: 0.05em;
@@ -215,13 +216,13 @@ body {
 
 .profile-card .title {
   color: var(--text-muted);
-  font-size: 0.78rem;
+  font-size: 1rem;
   margin-bottom: 0.5rem;
   letter-spacing: 0.03em;
 }
 
 .profile-card .role {
-  font-size: 0.88rem;
+  font-size: 1rem;
   font-weight: 600;
   margin-bottom: 1.2rem;
   letter-spacing: 0.02em;
@@ -238,7 +239,7 @@ body {
 .profile-card ul li {
   padding: 0.25rem 0;
   color: var(--text-muted);
-  font-size: 0.86rem;
+  font-size: 1.25rem;
 }
 
 .profile-card ul li::before {
@@ -250,7 +251,7 @@ body {
 .quote {
   font-style: italic;
   color: var(--text-muted);
-  font-size: 0.84rem;
+  font-size: 1.25rem;
   border-left: 2px solid var(--rose-light);
   padding-left: 1rem;
   margin-top: 1rem;
@@ -292,7 +293,7 @@ body {
 
 .step-content h4 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: 600;
   margin-bottom: 0.3rem;
   letter-spacing: 0.03em;
@@ -300,14 +301,14 @@ body {
 
 .step-content p {
   color: var(--text-muted);
-  font-size: 0.86rem;
+  font-size: 1.25rem;
 }
 
 .step-content code {
   background: var(--blush);
   padding: 0.15rem 0.5rem;
   border-radius: 3px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--lulu-color);
   font-family: 'Consolas', monospace;
 }
@@ -329,14 +330,14 @@ body {
 
 .tech-item h4 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.05rem;
+  font-size: 1.25rem;
   margin-bottom: 0.5rem;
   letter-spacing: 0.02em;
 }
 
 .tech-item p {
   color: var(--text-muted);
-  font-size: 0.86rem;
+  font-size: 1.25rem;
 }
 
 /* Architecture */
@@ -371,13 +372,13 @@ body {
 
 .project-card h4 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   margin-bottom: 0.5rem;
 }
 
 .project-card p {
   color: var(--text-muted);
-  font-size: 0.86rem;
+  font-size: 1.25rem;
   margin-bottom: 1rem;
 }
 
@@ -400,7 +401,7 @@ footer {
   text-align: center;
   padding: 3rem 2rem;
   color: var(--text-muted);
-  font-size: 0.8rem;
+  font-size: 1rem;
   border-top: 1px solid var(--border-light);
   letter-spacing: 0.02em;
   background: var(--ivory);
@@ -410,7 +411,7 @@ footer .footer-ornament {
   margin-bottom: 1rem;
   color: var(--gold);
   opacity: 0.4;
-  font-size: 0.9rem;
+  font-size: 1rem;
   letter-spacing: 0.5em;
 }
 

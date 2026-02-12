@@ -157,7 +157,7 @@ body {
   color: var(--gold);
   font-size: 0.9rem;
   opacity: 0.4;
-  letter-spacing: 0.8em;
+  text-align: center;
 }
 
 /* Sections */
@@ -724,7 +724,6 @@ footer .footer-ornament {
   color: var(--gold);
   opacity: 0.4;
   font-size: 0.9rem;
-  letter-spacing: 0.5em;
 }
 
 .footer-version {

@@ -1,3 +1,23 @@
+// ─── Mobile Nav Toggle ───
+(function() {
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  if (!toggle || !links) return;
+
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('active');
+    links.classList.toggle('open');
+  });
+
+  // Close menu on link click
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      toggle.classList.remove('active');
+      links.classList.remove('open');
+    });
+  });
+})();
+
 // Build info
 const BUILD_HASH = '46c7212';
 const BUILD_DATE = '2026-02-13';

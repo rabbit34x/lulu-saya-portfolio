@@ -83,6 +83,175 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// ─── Gate Loading Screen ───
+(function() {
+  const overlay = document.getElementById('loading-overlay');
+  if (!overlay) return;
+  document.body.style.overflow = 'hidden';
+
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      overlay.classList.add('open');
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        overlay.classList.add('done');
+        overlay.remove();
+      }, 1200);
+    }, 1200);
+  });
+})();
+
+// ─── Gold Particle Effect (Hero) ───
+(function() {
+  const canvas = document.getElementById('heroParticles');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  const COUNT = 25;
+
+  function resize() {
+    const hero = canvas.parentElement;
+    canvas.width = hero.offsetWidth;
+    canvas.height = hero.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  function isDark() {
+    return document.documentElement.getAttribute('data-theme') === 'dark';
+  }
+
+  for (let i = 0; i < COUNT; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 2.5 + 1,
+      speedY: -(Math.random() * 0.3 + 0.1),
+      drift: Math.random() * 0.4 - 0.2,
+      alpha: Math.random() * 0.5 + 0.2,
+      phase: Math.random() * Math.PI * 2
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const bright = isDark() ? 1.3 : 1;
+    particles.forEach(p => {
+      p.y += p.speedY;
+      p.x += Math.sin(p.phase) * 0.3 + p.drift;
+      p.phase += 0.01;
+      if (p.y < -10) { p.y = canvas.height + 10; p.x = Math.random() * canvas.width; }
+      if (p.x < -10) p.x = canvas.width + 10;
+      if (p.x > canvas.width + 10) p.x = -10;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      const a = Math.min(p.alpha * bright, 1);
+      ctx.fillStyle = `rgba(212, 185, 106, ${a})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ─── Cursor Trail ───
+(function() {
+  if (window.matchMedia('(max-width: 700px)').matches || 'ontouchstart' in window) return;
+  const canvas = document.getElementById('cursorTrail');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let trails = [];
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  document.addEventListener('mousemove', (e) => {
+    trails.push({
+      x: e.clientX,
+      y: e.clientY,
+      alpha: 0.5,
+      r: Math.random() * 2 + 1
+    });
+    if (trails.length > 50) trails.shift();
+  });
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    trails = trails.filter(t => t.alpha > 0.01);
+    trails.forEach(t => {
+      ctx.beginPath();
+      ctx.arc(t.x, t.y, t.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(212, 185, 106, ${t.alpha})`;
+      ctx.fill();
+      t.alpha -= 0.02;
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ─── Timeline Dot Pulse ───
+(function() {
+  const dots = document.querySelectorAll('.timeline-dot');
+  if (!dots.length) return;
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('pulse');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  dots.forEach(d => obs.observe(d));
+})();
+
+// ─── Profile Card 3D Tilt ───
+(function() {
+  if (window.matchMedia('(max-width: 700px)').matches || 'ontouchstart' in window) return;
+  document.querySelectorAll('.profile-card').forEach(card => {
+    // Add gloss overlay
+    const gloss = document.createElement('div');
+    gloss.className = 'gloss-overlay';
+    card.appendChild(gloss);
+
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      card.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 10}deg)`;
+      gloss.style.background = `radial-gradient(circle at ${(x+0.5)*100}% ${(y+0.5)*100}%, rgba(255,255,255,0.18) 0%, transparent 60%)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transition = 'transform 0.5s ease';
+      card.style.transform = '';
+      setTimeout(() => card.style.transition = '', 500);
+    });
+
+    card.addEventListener('mouseenter', () => {
+      card.style.transition = '';
+    });
+  });
+})();
+
+// ─── SVG Luxury Dividers ───
+(function() {
+  const svgContent = '<svg viewBox="0 0 400 30" xmlns="http://www.w3.org/2000/svg"><path d="M0,15 Q50,15 80,10 Q100,7 120,15 Q140,23 160,15 Q170,10 200,5 Q230,10 240,15 Q260,23 280,15 Q300,7 320,15 Q350,15 400,15" fill="none" stroke="var(--gold)" stroke-width="0.8" opacity="0.4"/><circle cx="200" cy="5" r="2.5" fill="var(--gold)" opacity="0.6"/><path d="M185,8 Q192,2 200,5 Q208,2 215,8" fill="none" stroke="var(--gold)" stroke-width="0.6" opacity="0.5"/><path d="M180,12 Q190,5 200,8 Q210,5 220,12" fill="none" stroke="var(--gold)" stroke-width="0.5" opacity="0.3"/><circle cx="100" cy="12" r="1.5" fill="var(--gold)" opacity="0.3"/><circle cx="300" cy="12" r="1.5" fill="var(--gold)" opacity="0.3"/></svg>';
+  const sections = document.querySelectorAll('section');
+  sections.forEach((sec, i) => {
+    if (i < sections.length - 1) {
+      const div = document.createElement('div');
+      div.className = 'luxury-divider';
+      div.innerHTML = svgContent;
+      sec.after(div);
+    }
+  });
+})();
+
 // ─── Parallax on Hero ───
 const hero = document.getElementById('hero');
 if (hero) {

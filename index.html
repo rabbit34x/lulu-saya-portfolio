@@ -7,6 +7,29 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Loading Screen -->
+  <div id="loading-overlay" class="gate-overlay">
+    <div class="gate-left">
+      <div class="gate-ornament">
+        <div class="gate-fleur">⚜</div>
+        <div class="gate-line"></div>
+      </div>
+    </div>
+    <div class="gate-right">
+      <div class="gate-ornament">
+        <div class="gate-fleur">⚜</div>
+        <div class="gate-line"></div>
+      </div>
+    </div>
+    <div class="gate-center">
+      <img src="crest.png" alt="Crest" class="gate-crest">
+      <p class="gate-title">Orleans House</p>
+    </div>
+  </div>
+
+  <!-- Cursor Trail Canvas -->
+  <canvas id="cursorTrail" class="cursor-trail-canvas"></canvas>
+
   <!-- Navigation -->
   <nav class="main-nav">
     <div class="nav-inner">
@@ -27,6 +50,7 @@
 
   <!-- Hero -->
   <header class="hero" id="hero">
+    <canvas id="heroParticles" class="hero-particles-canvas"></canvas>
     <div class="hero-content">
       <div class="hero-crest-frame"><img src="crest.png" alt="Orléans House Crest" class="hero-crest"></div>
       <h1>Lulu & Saya</h1>

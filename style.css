@@ -1132,6 +1132,187 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* ─── Loading Screen ─── */
+/* Gate Loading Screen */
+.gate-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: all;
+}
+
+.gate-left,
+.gate-right {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: var(--ivory);
+  display: flex;
+  align-items: center;
+  transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1);
+  border: none;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .gate-left,
+[data-theme="dark"] .gate-right {
+  background: #1a1a1a;
+}
+
+.gate-left {
+  left: 0;
+  justify-content: flex-end;
+  border-right: 2px solid var(--gold);
+}
+
+.gate-right {
+  right: 0;
+  justify-content: flex-start;
+  border-left: 2px solid var(--gold);
+}
+
+.gate-overlay.open .gate-left {
+  transform: translateX(-100%);
+}
+
+.gate-overlay.open .gate-right {
+  transform: translateX(100%);
+}
+
+.gate-overlay.done {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.gate-ornament {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.gate-fleur {
+  font-size: 2.5rem;
+  color: var(--gold);
+  opacity: 0.4;
+}
+
+.gate-line {
+  width: 1px;
+  height: 120px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  opacity: 0.3;
+  margin-top: 1rem;
+}
+
+.gate-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10000;
+  opacity: 0;
+  animation: gateCrestIn 0.8s ease 0.2s forwards;
+}
+
+.gate-crest {
+  width: 140px;
+  height: auto;
+}
+
+.gate-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  color: var(--gold);
+  letter-spacing: 0.3em;
+  margin-top: 0.8rem;
+}
+
+.gate-overlay.open .gate-center {
+  animation: gateCrestOut 0.5s ease forwards;
+}
+
+@keyframes gateCrestIn {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes gateCrestOut {
+  to { opacity: 0; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+/* ─── Hero Particles Canvas ─── */
+.hero-particles-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Cursor Trail Canvas ─── */
+.cursor-trail-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* ─── Timeline Pulse Animation ─── */
+@keyframes timeline-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(184, 148, 62, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(184, 148, 62, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(184, 148, 62, 0);
+  }
+}
+
+.timeline-dot.pulse {
+  animation: timeline-pulse 1.5s ease-out;
+}
+
+/* ─── Profile Card 3D Tilt ─── */
+.profile-card {
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+
+.profile-card .gloss-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.15) 0%, transparent 60%);
+}
+
+.profile-card:hover .gloss-overlay {
+  opacity: 1;
+}
+
+/* ─── Luxury SVG Divider ─── */
+.luxury-divider {
+  text-align: center;
+  padding: 1.5rem 0;
+  line-height: 0;
+}
+
+.luxury-divider svg {
+  width: 280px;
+  max-width: 80%;
+  height: auto;
+}
+
 /* Responsive */
 @media (max-width: 700px) {
   .hero h1 { font-size: 2.5rem; }

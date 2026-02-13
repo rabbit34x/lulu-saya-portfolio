@@ -759,10 +759,46 @@ body {
   font-style: normal;
 }
 
+/* Profile card link */
+.profile-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+}
+
+.profile-summary {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 0.8rem;
+}
+
+.profile-more {
+  font-size: 0.8rem;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  transition: letter-spacing 0.3s;
+}
+
+.profile-card-link:hover .profile-more {
+  letter-spacing: 0.15em;
+}
+
+/* Project card links */
+.project-card h4 a {
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.project-card h4 a:hover {
+  color: var(--gold);
+}
+
 /* Footer */
 footer {
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 0;
   color: var(--text-muted);
   font-size: 0.8rem;
   border-top: 1px solid var(--border-light);
@@ -782,18 +818,56 @@ footer::before {
   opacity: 0.25;
 }
 
+.footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  padding: 3rem 2rem 2rem;
+  text-align: left;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.footer-col h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.3rem;
+}
+
+.footer-col a {
+  font-size: 0.8rem;
+}
+
+.footer-bottom {
+  padding: 1.5rem 2rem 2.5rem;
+  border-top: 1px solid var(--border-light);
+}
+
 footer .footer-ornament {
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   color: var(--gold);
   opacity: 0.4;
   font-size: 0.9rem;
 }
 
-.footer-version {
-  margin-top: 0.8rem;
-  font-size: 0.7rem;
-  color: var(--border);
-  letter-spacing: 0.05em;
+.footer-motto {
+  margin-top: 0.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--gold);
+  opacity: 0.5;
 }
 
 footer a {
@@ -814,5 +888,10 @@ footer a:hover {
   .tech-grid { grid-template-columns: 1fr; }
   .section.alt {
     padding: 3rem 1.5rem;
+  }
+  .footer-nav {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
   }
 }

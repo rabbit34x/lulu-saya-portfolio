@@ -1,9 +1,9 @@
 // Build info
 const BUILD_HASH = '46c7212';
-const 2026-02-12 = 'BUILD_DATE';
+const BUILD_DATE = '2026-02-12';
 document.addEventListener('DOMContentLoaded', () => {
   const el = document.getElementById('footer-version');
-  if (el) el.textContent = `build: ${BUILD_HASH} (${2026-02-12})`;
+  if (el) el.textContent = `build: ${BUILD_HASH} (${BUILD_DATE})`;
 });
 
 // Smooth scroll for anchor links

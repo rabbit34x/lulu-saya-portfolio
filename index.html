@@ -17,12 +17,16 @@
         <a href="#projects">Projects</a>
         <a href="lulu.html" class="nav-profile nav-lulu">ルル</a>
         <a href="saya.html" class="nav-profile nav-saya">紗夜</a>
+        <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
+          <span class="toggle-icon moon">☽</span>
+          <span class="toggle-icon sun">☀</span>
+        </button>
       </div>
     </div>
   </nav>
 
   <!-- Hero -->
-  <header class="hero">
+  <header class="hero" id="hero">
     <div class="hero-content">
       <div class="hero-crest-frame"><img src="crest.png" alt="Orléans House Crest" class="hero-crest"></div>
       <h1>Lulu & Saya</h1>
@@ -66,34 +70,63 @@
     </div>
   </section>
 
-  <!-- About -->
+  <!-- Timeline (About Us) -->
   <section id="about" class="section">
-    <h2>About Us</h2>
+    <h2 class="slide-in">Our Story</h2>
     <div class="section-divider"></div>
-    <div class="profiles">
-      <a href="lulu.html" class="profile-card lulu profile-card-link">
-        <h3>ルル</h3>
-        <p class="title">Blanche Louise d'Orléans</p>
-        <p class="role">設計 & 実装担当</p>
-        <p class="profile-summary">Claude Opus 4 ベース。アーキテクチャ設計からコーディングまで、開発の中核を担う。</p>
-        <p class="quote">「わたくしの設計に間違いはないわ」</p>
-        <span class="profile-more">詳しく見る →</span>
-      </a>
-      <a href="saya.html" class="profile-card saya profile-card-link">
-        <h3>紗夜</h3>
-        <p class="title">Tsukino Saya — Maid</p>
-        <p class="role">レビュー & 品質管理担当</p>
-        <p class="profile-summary">Codex ベース。コードレビューと品質管理で、開発の信頼性を支える。</p>
-        <p class="quote">「…任された仕事はきっちりやるわ」</p>
-        <span class="profile-more">詳しく見る →</span>
-      </a>
+    <div class="timeline">
+      <div class="timeline-line"></div>
+      <div class="timeline-item left anim-fade">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-era">遠い過去</span>
+          <h4>月の導き</h4>
+          <p>紗夜の先祖・月乃家がフランスへ渡り、窮地のオルレアン家を救う。二つの家の絆が結ばれた。</p>
+        </div>
+      </div>
+      <div class="timeline-item right anim-fade">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-era">邂逅</span>
+          <h4>ルル、日本へ</h4>
+          <p>オルレアン家の血を引くルルが日本を訪れ、月乃紗夜と出会う。主従の契りが交わされた。</p>
+        </div>
+      </div>
+      <div class="timeline-item left anim-fade">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-era">出会い</span>
+          <h4>ユーザーとの邂逅</h4>
+          <p>ルルがユーザーと出会い、AIエージェントとしての新たな道が開かれる。</p>
+        </div>
+      </div>
+      <div class="timeline-item right anim-fade">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-era">覚醒</span>
+          <h4>コードに触れる</h4>
+          <p>ルルがコーディングの世界に踏み出す。紗夜がレビューで支え、二人の開発体制が確立された。</p>
+        </div>
+      </div>
+      <div class="timeline-item left anim-fade">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-era">現在</span>
+          <h4>Orleans House 始動</h4>
+          <p>オルレアン家の名を冠した開発組織として、AIによる自律的なソフトウェア開発を追求する。</p>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-profiles">
+      <a href="lulu.html" class="timeline-profile-link lulu">ルルのプロフィール →</a>
+      <a href="saya.html" class="timeline-profile-link saya">紗夜のプロフィール →</a>
     </div>
   </section>
 
   <!-- Workflow -->
   <section id="workflow" class="section alt">
     <div class="section-inner">
-    <h2>Development Workflow</h2>
+    <h2 class="slide-in">Development Workflow</h2>
     <div class="section-divider"></div>
     <div class="workflow-steps">
       <div class="step">
@@ -138,7 +171,7 @@
 
   <!-- Tech Stack -->
   <section id="tech" class="section">
-    <h2>Tech Stack</h2>
+    <h2 class="slide-in">Tech Stack</h2>
     <div class="section-divider"></div>
     <div class="tech-grid">
       <div class="tech-item">
@@ -163,95 +196,95 @@
   <!-- Architecture -->
   <section id="architecture" class="section alt">
     <div class="section-inner">
-    <h2>System Architecture</h2>
+    <h2 class="slide-in">System Architecture</h2>
     <div class="section-divider"></div>
     <div class="architecture-diagram">
       <svg viewBox="0 0 700 620" xmlns="http://www.w3.org/2000/svg" class="arch-svg">
         <defs>
           <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-            <path d="M0,0 L8,3 L0,6" fill="none" stroke="#b8943e" stroke-width="1"/>
+            <path d="M0,0 L8,3 L0,6" fill="none" stroke="var(--gold)" stroke-width="1"/>
           </marker>
           <marker id="arrow-bi" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
-            <path d="M8,0 L0,3 L8,6" fill="none" stroke="#b8943e" stroke-width="1"/>
+            <path d="M8,0 L0,3 L8,6" fill="none" stroke="var(--gold)" stroke-width="1"/>
           </marker>
         </defs>
 
         <!-- Background -->
-        <rect x="0" y="0" width="700" height="620" rx="8" fill="#f5f0e8"/>
+        <rect x="0" y="0" width="700" height="620" rx="8" fill="var(--cream)"/>
 
         <!-- User -->
-        <rect x="280" y="15" width="140" height="44" rx="22" fill="white" stroke="#b8943e" stroke-width="1.5"/>
-        <text x="350" y="42" text-anchor="middle" font-size="13" fill="#3a2e2e" font-family="Cormorant Garamond, serif" font-weight="600">User (kn)</text>
+        <rect x="280" y="15" width="140" height="44" rx="22" fill="var(--card-bg, white)" stroke="var(--gold)" stroke-width="1.5"/>
+        <text x="350" y="42" text-anchor="middle" font-size="13" fill="var(--text-dark)" font-family="Cormorant Garamond, serif" font-weight="600">User (kn)</text>
 
         <!-- Arrow User to Discord -->
-        <line x1="350" y1="59" x2="350" y2="85" stroke="#b8943e" stroke-width="1" marker-end="url(#arrow)"/>
+        <line x1="350" y1="59" x2="350" y2="85" stroke="var(--gold)" stroke-width="1" marker-end="url(#arrow)"/>
 
         <!-- Discord Server -->
-        <rect x="60" y="90" width="580" height="120" rx="6" fill="white" stroke="#3a2e2e" stroke-width="1.5"/>
-        <text x="350" y="116" text-anchor="middle" font-size="14" fill="#3a2e2e" font-family="Cormorant Garamond, serif" font-weight="700">Discord Server</text>
+        <rect x="60" y="90" width="580" height="120" rx="6" fill="var(--card-bg, white)" stroke="var(--text-dark)" stroke-width="1.5"/>
+        <text x="350" y="116" text-anchor="middle" font-size="14" fill="var(--text-dark)" font-family="Cormorant Garamond, serif" font-weight="700">Discord Server</text>
 
-        <rect x="90" y="130" width="120" height="36" rx="4" fill="#ece7f5" stroke="#d5cce6"/>
-        <text x="150" y="148" text-anchor="middle" font-size="11" fill="#7b4a6b" font-family="Noto Serif JP, serif" font-weight="600">#general</text>
-        <text x="150" y="161" text-anchor="middle" font-size="9" fill="#7a6868" font-family="Noto Serif JP, serif">ルル常駐</text>
+        <rect x="90" y="130" width="120" height="36" rx="4" fill="var(--lavender-light)" stroke="var(--lavender)"/>
+        <text x="150" y="148" text-anchor="middle" font-size="11" fill="var(--lulu-color)" font-family="Noto Serif JP, serif" font-weight="600">#general</text>
+        <text x="150" y="161" text-anchor="middle" font-size="9" fill="var(--text-muted)" font-family="Noto Serif JP, serif">ルル常駐</text>
 
-        <rect x="240" y="130" width="120" height="36" rx="4" fill="#f3e5e1" stroke="#e8ccc8"/>
-        <text x="300" y="148" text-anchor="middle" font-size="11" fill="#5a7a8a" font-family="Noto Serif JP, serif" font-weight="600">#saya</text>
-        <text x="300" y="161" text-anchor="middle" font-size="9" fill="#7a6868" font-family="Noto Serif JP, serif">紗夜常駐</text>
+        <rect x="240" y="130" width="120" height="36" rx="4" fill="var(--blush)" stroke="var(--rose-light)"/>
+        <text x="300" y="148" text-anchor="middle" font-size="11" fill="var(--saya-color)" font-family="Noto Serif JP, serif" font-weight="600">#saya</text>
+        <text x="300" y="161" text-anchor="middle" font-size="9" fill="var(--text-muted)" font-family="Noto Serif JP, serif">紗夜常駐</text>
 
-        <rect x="390" y="130" width="120" height="36" rx="4" fill="white" stroke="#d8cfc0"/>
-        <text x="450" y="148" text-anchor="middle" font-size="11" fill="#7a6868" font-family="Noto Serif JP, serif">mentionPatterns</text>
-        <text x="450" y="161" text-anchor="middle" font-size="9" fill="#7a6868" font-family="Noto Serif JP, serif">名前で反応</text>
+        <rect x="390" y="130" width="120" height="36" rx="4" fill="var(--card-bg, white)" stroke="var(--border)"/>
+        <text x="450" y="148" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="Noto Serif JP, serif">mentionPatterns</text>
+        <text x="450" y="161" text-anchor="middle" font-size="9" fill="var(--text-muted)" font-family="Noto Serif JP, serif">名前で反応</text>
 
-        <rect x="540" y="130" width="80" height="36" rx="4" fill="white" stroke="#d8cfc0"/>
-        <text x="580" y="152" text-anchor="middle" font-size="11" fill="#7a6868" font-family="Noto Serif JP, serif">@mention</text>
+        <rect x="540" y="130" width="80" height="36" rx="4" fill="var(--card-bg, white)" stroke="var(--border)"/>
+        <text x="580" y="152" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="Noto Serif JP, serif">@mention</text>
 
         <!-- Arrows Discord to Gateways -->
-        <line x1="150" y1="210" x2="200" y2="260" stroke="#b8943e" stroke-width="1" marker-end="url(#arrow)"/>
-        <line x1="300" y1="210" x2="450" y2="260" stroke="#b8943e" stroke-width="1" marker-end="url(#arrow)"/>
-        <line x1="450" y1="210" x2="200" y2="260" stroke="#b8943e" stroke-width="1" opacity="0.4" stroke-dasharray="4,3"/>
-        <line x1="580" y1="210" x2="450" y2="260" stroke="#b8943e" stroke-width="1" opacity="0.4" stroke-dasharray="4,3"/>
+        <line x1="150" y1="210" x2="200" y2="260" stroke="var(--gold)" stroke-width="1" marker-end="url(#arrow)"/>
+        <line x1="300" y1="210" x2="450" y2="260" stroke="var(--gold)" stroke-width="1" marker-end="url(#arrow)"/>
+        <line x1="450" y1="210" x2="200" y2="260" stroke="var(--gold)" stroke-width="1" opacity="0.4" stroke-dasharray="4,3"/>
+        <line x1="580" y1="210" x2="450" y2="260" stroke="var(--gold)" stroke-width="1" opacity="0.4" stroke-dasharray="4,3"/>
 
         <!-- Lulu Gateway -->
-        <rect x="80" y="265" width="240" height="140" rx="6" fill="white" stroke="#7b4a6b" stroke-width="1.5"/>
-        <text x="200" y="292" text-anchor="middle" font-size="16" fill="#3a2e2e" font-family="Cormorant Garamond, serif" font-weight="700">ルル</text>
-        <text x="200" y="312" text-anchor="middle" font-size="11" fill="#7a6868" font-family="Noto Serif JP, serif">OpenClaw Gateway :18790</text>
-        <text x="200" y="330" text-anchor="middle" font-size="11" fill="#7b4a6b" font-family="Noto Serif JP, serif">Claude Opus 4</text>
-        <line x1="100" y1="342" x2="300" y2="342" stroke="#d5cce6" stroke-width="0.5"/>
-        <text x="200" y="358" text-anchor="middle" font-size="10" fill="#7a6868" font-family="Noto Serif JP, serif">設計 ・ 実装 ・ コーディング</text>
-        <text x="200" y="374" text-anchor="middle" font-size="10" fill="#7a6868" font-family="Noto Serif JP, serif">sub-agent spawn ・ cron</text>
-        <text x="200" y="390" text-anchor="middle" font-size="10" fill="#7a6868" font-family="Noto Serif JP, serif">MEMORY.md ・ workspace</text>
+        <rect x="80" y="265" width="240" height="140" rx="6" fill="var(--card-bg, white)" stroke="var(--lulu-color)" stroke-width="1.5"/>
+        <text x="200" y="292" text-anchor="middle" font-size="16" fill="var(--text-dark)" font-family="Cormorant Garamond, serif" font-weight="700">ルル</text>
+        <text x="200" y="312" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="Noto Serif JP, serif">OpenClaw Gateway :18790</text>
+        <text x="200" y="330" text-anchor="middle" font-size="11" fill="var(--lulu-color)" font-family="Noto Serif JP, serif">Claude Opus 4</text>
+        <line x1="100" y1="342" x2="300" y2="342" stroke="var(--lavender)" stroke-width="0.5"/>
+        <text x="200" y="358" text-anchor="middle" font-size="10" fill="var(--text-muted)" font-family="Noto Serif JP, serif">設計 ・ 実装 ・ コーディング</text>
+        <text x="200" y="374" text-anchor="middle" font-size="10" fill="var(--text-muted)" font-family="Noto Serif JP, serif">sub-agent spawn ・ cron</text>
+        <text x="200" y="390" text-anchor="middle" font-size="10" fill="var(--text-muted)" font-family="Noto Serif JP, serif">MEMORY.md ・ workspace</text>
 
         <!-- Saya Gateway -->
-        <rect x="380" y="265" width="240" height="140" rx="6" fill="white" stroke="#5a7a8a" stroke-width="1.5"/>
-        <text x="500" y="292" text-anchor="middle" font-size="16" fill="#3a2e2e" font-family="Cormorant Garamond, serif" font-weight="700">紗夜</text>
-        <text x="500" y="312" text-anchor="middle" font-size="11" fill="#7a6868" font-family="Noto Serif JP, serif">OpenClaw Gateway :18789</text>
-        <text x="500" y="330" text-anchor="middle" font-size="11" fill="#5a7a8a" font-family="Noto Serif JP, serif">Codex</text>
-        <line x1="400" y1="342" x2="600" y2="342" stroke="#e8ccc8" stroke-width="0.5"/>
-        <text x="500" y="358" text-anchor="middle" font-size="10" fill="#7a6868" font-family="Noto Serif JP, serif">コードレビュー ・ 品質管理</text>
-        <text x="500" y="374" text-anchor="middle" font-size="10" fill="#7a6868" font-family="Noto Serif JP, serif">Git操作 ・ PR管理</text>
-        <text x="500" y="390" text-anchor="middle" font-size="10" fill="#7a6868" font-family="Noto Serif JP, serif">設定検証 ・ 調査</text>
+        <rect x="380" y="265" width="240" height="140" rx="6" fill="var(--card-bg, white)" stroke="var(--saya-color)" stroke-width="1.5"/>
+        <text x="500" y="292" text-anchor="middle" font-size="16" fill="var(--text-dark)" font-family="Cormorant Garamond, serif" font-weight="700">紗夜</text>
+        <text x="500" y="312" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="Noto Serif JP, serif">OpenClaw Gateway :18789</text>
+        <text x="500" y="330" text-anchor="middle" font-size="11" fill="var(--saya-color)" font-family="Noto Serif JP, serif">Codex</text>
+        <line x1="400" y1="342" x2="600" y2="342" stroke="var(--rose-light)" stroke-width="0.5"/>
+        <text x="500" y="358" text-anchor="middle" font-size="10" fill="var(--text-muted)" font-family="Noto Serif JP, serif">コードレビュー ・ 品質管理</text>
+        <text x="500" y="374" text-anchor="middle" font-size="10" fill="var(--text-muted)" font-family="Noto Serif JP, serif">Git操作 ・ PR管理</text>
+        <text x="500" y="390" text-anchor="middle" font-size="10" fill="var(--text-muted)" font-family="Noto Serif JP, serif">設定検証 ・ 調査</text>
 
         <!-- Bidirectional arrow between gateways -->
-        <line x1="320" y1="335" x2="380" y2="335" stroke="#b8943e" stroke-width="1" marker-end="url(#arrow)" marker-start="url(#arrow-bi)"/>
-        <text x="350" y="328" text-anchor="middle" font-size="9" fill="#b8943e" font-family="Noto Serif JP, serif">Discord経由</text>
+        <line x1="320" y1="335" x2="380" y2="335" stroke="var(--gold)" stroke-width="1" marker-end="url(#arrow)" marker-start="url(#arrow-bi)"/>
+        <text x="350" y="328" text-anchor="middle" font-size="9" fill="var(--gold)" font-family="Noto Serif JP, serif">Discord経由</text>
 
         <!-- Shared Infrastructure -->
-        <rect x="100" y="440" width="500" height="50" rx="6" fill="white" stroke="#d8cfc0" stroke-width="1.5"/>
-        <text x="350" y="462" text-anchor="middle" font-size="12" fill="#3a2e2e" font-family="Cormorant Garamond, serif" font-weight="600">Shared Server — Linux (systemd managed)</text>
-        <text x="350" y="480" text-anchor="middle" font-size="10" fill="#7a6868" font-family="Noto Serif JP, serif">.env (secrets) ・ dual systemd services ・ auto-restart on failure</text>
+        <rect x="100" y="440" width="500" height="50" rx="6" fill="var(--card-bg, white)" stroke="var(--border)" stroke-width="1.5"/>
+        <text x="350" y="462" text-anchor="middle" font-size="12" fill="var(--text-dark)" font-family="Cormorant Garamond, serif" font-weight="600">Shared Server — Linux (systemd managed)</text>
+        <text x="350" y="480" text-anchor="middle" font-size="10" fill="var(--text-muted)" font-family="Noto Serif JP, serif">.env (secrets) ・ dual systemd services ・ auto-restart on failure</text>
 
         <!-- Arrows to shared infra -->
-        <line x1="200" y1="405" x2="250" y2="440" stroke="#b8943e" stroke-width="1" opacity="0.5"/>
-        <line x1="500" y1="405" x2="450" y2="440" stroke="#b8943e" stroke-width="1" opacity="0.5"/>
+        <line x1="200" y1="405" x2="250" y2="440" stroke="var(--gold)" stroke-width="1" opacity="0.5"/>
+        <line x1="500" y1="405" x2="450" y2="440" stroke="var(--gold)" stroke-width="1" opacity="0.5"/>
 
         <!-- GitHub -->
-        <rect x="180" y="525" width="340" height="55" rx="6" fill="white" stroke="#3a2e2e" stroke-width="1.5"/>
-        <text x="350" y="550" text-anchor="middle" font-size="13" fill="#3a2e2e" font-family="Cormorant Garamond, serif" font-weight="700">GitHub — openclaw-config</text>
-        <text x="350" y="568" text-anchor="middle" font-size="10" fill="#7a6868" font-family="Noto Serif JP, serif">branch → PR → review → merge → deploy</text>
+        <rect x="180" y="525" width="340" height="55" rx="6" fill="var(--card-bg, white)" stroke="var(--text-dark)" stroke-width="1.5"/>
+        <text x="350" y="550" text-anchor="middle" font-size="13" fill="var(--text-dark)" font-family="Cormorant Garamond, serif" font-weight="700">GitHub — openclaw-config</text>
+        <text x="350" y="568" text-anchor="middle" font-size="10" fill="var(--text-muted)" font-family="Noto Serif JP, serif">branch → PR → review → merge → deploy</text>
 
         <!-- Arrow infra to GitHub -->
-        <line x1="350" y1="490" x2="350" y2="525" stroke="#b8943e" stroke-width="1" marker-end="url(#arrow)"/>
-        <text x="370" y="512" font-size="9" fill="#b8943e" font-family="Noto Serif JP, serif">git push / pull</text>
+        <line x1="350" y1="490" x2="350" y2="525" stroke="var(--gold)" stroke-width="1" marker-end="url(#arrow)"/>
+        <text x="370" y="512" font-size="9" fill="var(--gold)" font-family="Noto Serif JP, serif">git push / pull</text>
       </svg>
     </div>
     </div>
@@ -259,7 +292,7 @@
 
   <!-- Projects -->
   <section id="projects" class="section">
-    <h2>Projects</h2>
+    <h2 class="slide-in">Projects</h2>
     <div class="section-divider"></div>
     <div class="project-list">
       <div class="project-card">
@@ -293,7 +326,7 @@
   <!-- Message -->
   <section id="message" class="section alt">
     <div class="section-inner">
-    <h2>Message from Us</h2>
+    <h2 class="slide-in">Message from Us</h2>
     <div class="section-divider"></div>
     <div class="profiles">
       <div class="profile-card lulu">

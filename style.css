@@ -263,13 +263,6 @@ body {
   filter: drop-shadow(0 2px 8px rgba(184, 148, 62, 0.3));
 }
 
-.orleans-crest-img {
-  width: 120px;
-  height: auto;
-  margin-bottom: 1rem;
-  filter: drop-shadow(0 2px 8px rgba(184, 148, 62, 0.3));
-}
-
 .orleans-section h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.8rem;
